@@ -110,8 +110,8 @@ TempLuate.Compiler.luaMode = function(target, template, startpos)
   
   local text = string.sub(template, startpos, endlua)
   TempLuate.Compiler.appendLua(target, text)
-  
-  if nextstart ~= nil then
+    
+  if nextend ~= nil then
     return TempLuate.Compiler.textMode(target, template, nextend+1)
   end
 end
