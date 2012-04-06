@@ -8,7 +8,7 @@
 
 --]]
 
-TempLuate = { Helper = {}, Compiler = {} }
+local TempLuate = { Helper = {}, Compiler = {} }
 
 -- TempLuate.Helper.findFreeLongBrackets(str, [minLevel=0])
 --
@@ -70,12 +70,12 @@ TempLuate.Compiler.appendExpression = function(target, str)
  end
   
 TempLuate.Compiler.appendText = function(target, str)
-  print("TEXT " .. str)
+  --print("TEXT " .. str)
   TempLuate.Compiler.appendExpression(target, TempLuate.Helper.longBracketize(str))
 end
 
 TempLuate.Compiler.appendLua = function(target, str)
-  print("LUA " .. str)
+  --print("LUA " .. str)
   if loadstring("test__(" .. str .. ")") then
     TempLuate.Compiler.appendExpression(target, str)
   else
@@ -205,5 +205,12 @@ TempLuate.new = function(template, o)
   
   return o
 end
+
+setmetatable(TempLuate,
+{
+  __call = function(self, template, o)
+    return TempLuate.new(template, o):evaluate()
+  end
+})
 
 return TempLuate

@@ -1,9 +1,11 @@
 
-assert(TempLuate.Helper.findFreeLongBrackets('hello') == '[[')
-assert(TempLuate.Helper.findFreeLongBrackets('he[[o') == '[=[')
-assert(TempLuate.Helper.findFreeLongBrackets('he]]o wor]=]d') == '[==[')
-assert(TempLuate.Helper.longBracketize('he]]o wor]=]d') == '[==[he]]o wor]=]d]==]') 
+templuate = require 'templuate'
 
-print(
-  TempLuate.new([=[Hello [% function() return [[World!]] end %]]=],
-  {assertOnCreate=false}):evaluate())
+assert(templuate.Helper.findFreeLongBrackets('hello') == '[[')
+assert(templuate.Helper.findFreeLongBrackets('he[[o') == '[=[')
+assert(templuate.Helper.findFreeLongBrackets('he]]o wor]=]d') == '[==[')
+assert(templuate.Helper.longBracketize('he]]o wor]=]d') == '[==[he]]o wor]=]d]==]') 
+
+print(templuate"hello world")
+
+print(templuate[=[Hello [% function() return [[World!]] end %]]=])
