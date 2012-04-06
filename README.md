@@ -5,21 +5,23 @@ templuate is a lightweight templating system for the Lua scripting language.
 It is written in pure Lua, and is very easy to install. The syntax is comparable to eRuby (erb)
 but with a number of simplifications.
 
-The following Lua code
+The following Lua code:
 
-  templuate = require 'templuate'
+```lua
+templuate = require 'templuate'
 
-  interactive = true
-  foo = "enter"
+interactive = true
+foo = "enter"
 
-  output = templuate[[
-    [% if interactive then ]
-      Please press the [%foo] key
-    [% else ]
-      Please wait while we automatically do stuff
-    [% end ]
-  ]]
-  print(output)
+output = templuate[[
+  [% if interactive then ]
+    Please press the [%foo] key
+  [% else ]
+    Please wait while we automatically do stuff
+  [% end ]
+]]
+print(output)
+```
 
 Results in
 
