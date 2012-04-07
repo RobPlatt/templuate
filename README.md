@@ -2,17 +2,28 @@ templuate
 =========
 
 templuate is a lightweight templating system for the Lua scripting language.
-It is written in pure Lua, and is very easy to install. The syntax is comparable to eRuby (erb)
-but with a number of simplifications.
+It is written in pure Lua, and is very easy to install.
 
-The following Lua code:
+The syntax is comparable to eRuby (erb), but is easier to use because it handles
+conventional uses simply and intelligently. For example, there is no need to
+distinguish between expression substitution and code. In eRuby, it is very easy to accidentally
+write your tags with '<%' when you meant '<%=' or vice versa, and there are many forum threads which
+discuss the resulting confusion. templuate just does what makes sense. '[% 7 + 3]' will substitute the value '10'
+into the output, whereas '[% for x in y do ]' is code. eRuby uses will also note that the close bracket
+doesn't need the matching percent symbol, though this is allowed.
+
+Example:
 
 ```lua
+
+-- include the templuate module
 templuate = require 'templuate'
 
+-- some example variables used in the template
 interactive = true
 foo = "enter"
 
+-- immediately process a template into an output string
 output = templuate[[
   [% if interactive then ]
     Please press the [%foo] key
@@ -20,12 +31,16 @@ output = templuate[[
     Please wait while we automatically do stuff
   [% end ]
 ]]
+
+-- display the string
 print(output)
 ```
 
-Results in
+This example results in
 
       Please press the enter key
+
+All whitespace is preserved. Templuate doesn't care about line endings.
 
 Installing
 ----------
