@@ -1,14 +1,14 @@
-templuate
+tempLuate
 =========
 
-templuate is a lightweight templating system for the Lua scripting language.
+tempLuate is a lightweight templating system for the Lua scripting language.
 It is written in pure Lua, and is very easy to install.
 
 The syntax is comparable to eRuby (erb), but is easier to use because it handles
 conventional uses simply and intelligently. For example, there is no need to
 distinguish between expression substitution and code. In eRuby, it is very easy to accidentally
 write your tags with '<%' when you meant '<%=' or vice versa, and there are many forum threads which
-discuss the resulting confusion. templuate just does what makes sense. '[% 7 + 3]' will substitute the value '10'
+discuss the resulting confusion. tempLuate just does what makes sense. '[% 7 + 3]' will substitute the value '10'
 into the output, whereas '[% for x in y do ]' is code. eRuby uses will also note that the close bracket
 doesn't need the matching percent symbol, though this is allowed.
 
@@ -40,7 +40,7 @@ This example results in
 
       Please press the enter key
 
-All whitespace is preserved. Templuate doesn't care about line endings.
+All whitespace is preserved. tempLuate doesn't care about line endings.
 
 Installing
 ----------
