@@ -6,11 +6,13 @@ It is written in pure Lua, and is very easy to install.
 
 The syntax is comparable to eRuby (erb), but is easier to use because it handles
 conventional uses simply and intelligently. For example, there is no need to
-distinguish between expression substitution and code. In eRuby, it is very easy to accidentally
-write your tags with '<%' when you meant '<%=' or vice versa, which has resulted in many forum questions from confused
-programmers. tempLuate just does what makes sense. '[% 7 + 3]' will substitute the value '10'
-into the output, whereas '[% for x in y do ]' is code. eRuby uses will also note that the close bracket
-doesn't need the matching percent symbol, though this is allowed.
+distinguish between expression substitution and code. In eRuby, it is very easy
+to accidentally write your tags with '<%' when you meant '<%=' or vice versa,
+which has resulted in many forum questions from confused programmers. tempLuate
+just does what makes sense. '[% 7 + 3]' will substitute the value '10' into the
+output, whereas '[% for x in y do ]' is code. Those familiar with eRuby will
+also note that the close bracket doesn't need the matching percent symbol,
+though this is allowed.
 
 Example:
 
